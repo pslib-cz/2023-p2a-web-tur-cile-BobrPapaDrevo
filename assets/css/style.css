@@ -76,6 +76,7 @@ figure, h2 {
 }
 
 .categories__item:hover {
+    transition: .5s;
     transform: scale(1.02);
 }
 
@@ -88,11 +89,11 @@ figure, h2 {
 
 .categories__item:hover .categories__item-image {
     transition: transform 2s;
-    transform: scale(1.5);
+    transform: scale(1.4);
     
 }
 
-.categories:has(.categories__item:hover) .categories__item-image:not(:hover) {
+.categories:has(.categories__item:hover) .categories__item:not(:hover) .categories__item-image{
     filter: blur(1rem);
 }
 

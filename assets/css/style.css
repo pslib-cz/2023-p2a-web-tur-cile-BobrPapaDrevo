@@ -1,0 +1,106 @@
+:root {
+    --text-light: #000000;
+}
+html {
+    font-family: 'Open Sans', sans-serif;
+}
+.page-header {
+    text-align: center;
+    padding: 1em;
+    margin-bottom: 1em;;
+}
+.categories {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    /* použijte auto-fit s šířkou sloupce minimálně 300px */
+    padding: 1em;
+    gap: 1em;
+}
+.categories__item {
+    position: relative;
+    color: inherit;
+    /* max-height: 80vh; */
+}
+.categories__item:hover {
+    box-shadow: 0 0 8px 2px var(--text-light);
+}
+.categories__item-image {
+    filter: brightness(0.9) saturate(1) contrast(1);
+}
+.categories__item-description {
+    padding: 1em;
+    color: var(--text-light);
+}
+/* TODO */
+
+
+/* Global */
+.img-responsive {
+    width: 100%;
+    display: block;
+}
+figure, h2 {
+    margin: 0;
+}
+.heading {
+    margin: 0.25em 0;
+    font-weight: bold;
+}
+.heading--h1 {
+    text-transform: uppercase;
+    font-size: 2em;
+    color: var(--text-light);
+}
+
+/*Moje :)*/
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.categories__item {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.categories__item-description {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: white;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.categories__item:hover {
+    transform: scale(1.02);
+}
+
+.categories__item:hover .categories__item-description {
+    transition: left .5s, bottom .5s, transform .5s;
+    transform: translate(-50%, 50%);
+    left: 50%;
+    bottom: 50%;
+}
+
+.categories__item:hover .categories__item-image {
+    transition: transform 2s;
+    transform: scale(1.5);
+    
+}
+
+.categories:has(.categories__item:hover) .categories__item-image:not(:hover) {
+    filter: blur(1rem);
+}
+
+.page-header {
+    background-image: url("../images/egypt.jpg");
+    background-size: cover;
+}
+
+.heading {
+    color: white;
+}
